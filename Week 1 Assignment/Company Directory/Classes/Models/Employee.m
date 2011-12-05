@@ -11,6 +11,10 @@
 @implementation Employee
 
 // @todo Synthesize properties in interface
+@synthesize name=_name;
+@synthesize jobTitle=_jobTitle;
+@synthesize birthday=_birthday;
+@synthesize salary=_salary;
 
 - (id)initWithName:(NSString *)name {
     self = [super init];
@@ -19,7 +23,7 @@
     }
     
     // @todo Set name
-    
+    _name=name;
     return self;
 }
 

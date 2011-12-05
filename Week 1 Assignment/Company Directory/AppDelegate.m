@@ -10,11 +10,6 @@
 
 #import "EmployeeListViewController.h"
 
-@interface AppDelegate ()
-@property (readwrite, nonatomic, retain) UIWindow *window;
-@property (readwrite, nonatomic, retain) UINavigationController *navigationController;
-@end
-
 @implementation AppDelegate
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
@@ -27,7 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     EmployeeListViewController *viewController = [[[EmployeeListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    // navigationController is readonly so self.navigationController = not allowed.
+    _navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     [self.window addSubview:self.navigationController.view];
