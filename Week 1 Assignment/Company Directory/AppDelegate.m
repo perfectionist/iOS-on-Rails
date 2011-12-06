@@ -10,11 +10,6 @@
 
 #import "EmployeeListViewController.h"
 
-@interface AppDelegate ()
-@property (readwrite, nonatomic, retain) UIWindow *window;
-@property (readwrite, nonatomic, retain) UINavigationController *navigationController;
-@end
-
 @implementation AppDelegate
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
