@@ -39,7 +39,7 @@ Create an `employees` property in `EmployeeListViewController`, and set it to th
 
 ### Step 3
 
-Create a new `UITableViewController` subclass called `EmployeeViewController`. It should manage the display of an employee's full information in a grouped table view (`UITableViewGroupedStyle`). The number of sections and rows will be fixed, rather than dependent on an array like in the employee list.
+Create a new `UITableViewController` subclass called `EmployeeViewController`. It should manage the display of an employee's full information in a grouped table view (`UITableViewStyleGrouped`). The number of sections and rows will be fixed, rather than dependent on an array like in the employee list.
 
 Once you've created that, you will add code to push this view controller into the navigation controller of `EmployeeListViewController` when a user taps on a cell.
 
