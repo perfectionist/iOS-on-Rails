@@ -10,9 +10,10 @@
 
 @interface Employee : NSObject
 
-// @todo Add properties for name, job title, birthday, and salary
-
-// @todo Implement the following methods
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *jobTitle;
+@property (nonatomic, retain) NSDate *birthday;
+@property (nonatomic, retain) NSNumber *salary;
 
 - (id)initWithName:(NSString *)name;
 
