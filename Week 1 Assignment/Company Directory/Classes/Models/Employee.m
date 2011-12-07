@@ -44,6 +44,23 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     [super dealloc];
 }
 
+- (NSString *)formattedBirthdayString {
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    return [dateFormatter stringFromDate:self.birthday];
+}
+
+- (NSString *)formattedSalaryString {
+    NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+    [numberFormatter setLocale:[NSLocale currentLocale]];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    return [numberFormatter stringFromNumber:self.salary];
+}
+
 + (NSArray *)sampleListOfEmployees {
     NSMutableArray *mutableEmployees = [NSMutableArray array];
     

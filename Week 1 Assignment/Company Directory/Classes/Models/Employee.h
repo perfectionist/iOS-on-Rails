@@ -17,6 +17,9 @@
 
 - (id)initWithName:(NSString *)name;
 
+- (NSString *)formattedBirthdayString;
+- (NSString *)formattedSalaryString;
+
 + (NSArray *)sampleListOfEmployees;
 
 @end
