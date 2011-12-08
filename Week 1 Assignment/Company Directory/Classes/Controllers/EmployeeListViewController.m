@@ -10,6 +10,8 @@
 
 @implementation EmployeeListViewController
 
+@synthesize employees = _employees;
+
 - (void)dealloc {
     // @todo Release instance variables from properties
     [super dealloc];

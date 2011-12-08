@@ -27,6 +27,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 @synthesize birthday=_birthday;
 @synthesize salary=_salary;
 
+// TODO: Set name
 - (id)initWithName:(NSString *)name {
     self = [super init];
     if (!self) {
@@ -40,6 +41,9 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 
 - (void)dealloc {
     // @todo Release instance variables from properties
+    [_name releae];
+    [_jobTitle release];
+    [_birthday release];
     [super dealloc];
 }
 
