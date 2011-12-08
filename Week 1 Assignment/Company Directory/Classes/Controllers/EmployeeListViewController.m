@@ -7,6 +7,7 @@
 //
 
 #import "EmployeeListViewController.h"
+#import "EmployeeViewController.h"
 
 #import "Employee.h"
 
@@ -35,6 +36,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if ([self.tableView indexPathForSelectedRow]) {
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,8 +83,9 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // @todo Create and push a new view configured for the corresponding employee
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    EmployeeViewController *viewController = [[[EmployeeViewController alloc] initWithEmployee:employee] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

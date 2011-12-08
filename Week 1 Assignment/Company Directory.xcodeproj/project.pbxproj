@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F886A03B14907E400017B3A6 /* EmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F886A03A14907E400017B3A6 /* EmployeeViewController.m */; };
 		F8F7623F148D3367004F8DBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F7623E148D3367004F8DBB /* UIKit.framework */; };
 		F8F76241148D3367004F8DBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76240148D3367004F8DBB /* Foundation.framework */; };
 		F8F76243148D3367004F8DBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76242148D3367004F8DBB /* CoreGraphics.framework */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F886A03914907E400017B3A6 /* EmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewController.h; sourceTree = "<group>"; };
+		F886A03A14907E400017B3A6 /* EmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewController.m; sourceTree = "<group>"; };
 		F8F7623A148D3367004F8DBB /* Company Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Company Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F7623E148D3367004F8DBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8F76240148D3367004F8DBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 			children = (
 				F8F76259148D33AE004F8DBB /* EmployeeListViewController.h */,
 				F8F7625A148D33AE004F8DBB /* EmployeeListViewController.m */,
+				F886A03914907E400017B3A6 /* EmployeeViewController.h */,
+				F886A03A14907E400017B3A6 /* EmployeeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				F8F7624F148D3367004F8DBB /* AppDelegate.m in Sources */,
 				F8F7625C148D33AE004F8DBB /* EmployeeListViewController.m in Sources */,
 				F8F76260148D34C6004F8DBB /* Employee.m in Sources */,
+				F886A03B14907E400017B3A6 /* EmployeeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,7 @@
 				F8F76254148D3367004F8DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
