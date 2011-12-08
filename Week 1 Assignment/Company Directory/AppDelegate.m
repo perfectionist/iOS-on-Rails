@@ -20,10 +20,27 @@
     [super dealloc];
 }
 
+
+#pragma mark - setter override
+
+// These two setter methods overwrite the readonly property attribute for UIWindow 
+// and UINavigationController
+
+-(void)setWindow:(UIWindow *)window {
+    [_window release];
+    _window = [window retain];
+}
+
+-(void)setNavigationController:(UINavigationController *)navigationController {
+    [_navigationController release];
+    _navigationController = [navigationController retain];
+}
+
+#pragma mark 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     EmployeeListViewController *viewController = [[[EmployeeListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-    // navigationController is readonly so self.navigationController = not allowed.
-    _navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     [self.window addSubview:self.navigationController.view];
@@ -31,6 +48,8 @@
     
     return YES;
 }
+
+#pragma mark
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -57,6 +76,10 @@
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
 }
+
+// MARK: -
+// MARK: Testing Mark
+
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     /*

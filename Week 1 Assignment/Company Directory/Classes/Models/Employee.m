@@ -8,6 +8,17 @@
 
 #import "Employee.h"
 
+static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUInteger year) {
+    NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    
+    NSDateComponents *birthdayComponents = [[[NSDateComponents alloc] init] autorelease];
+    [birthdayComponents setMonth:month];
+    [birthdayComponents setDay:day];
+    [birthdayComponents setYear:year];
+    
+    return [gregorianCalendar dateFromComponents:birthdayComponents];
+}
+
 @implementation Employee
 
 // @todo Synthesize properties in interface
