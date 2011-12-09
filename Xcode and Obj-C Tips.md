@@ -30,7 +30,7 @@ There is a neat trick for adding comments to the jump bar. **NOTE**: These comme
 	// ???: your comment here…
 ###!!!
 	// !!!: your comment here…
-## How does it look?
+### How does it look?
 ![jump bar](http://www.kellenstyler.com/wp-content/posts/iOSCustomJumpbarFunctionMenu/customMenu.jpg)
 
 ## #pragma mark and jump bar.
@@ -38,8 +38,26 @@ You can also use `#pragma mark` to make nice labels between methods in jump bar.
 	#pragma mark - UIViewController
 The - will draw a dividing line above the label (`UIViewController` in this case)
 
-The `MARK:` is another way to to the same thing:
+The `MARK:` comment is another way to to the same thing:
 	// MARK: - UIViewController
-Which ever one you use is a matter of personal taste.
+Whichever one you use is a matter of personal taste.
 
 **NOTE:** A trailing `-` will draw a dividing line below the label.
+
+## Github application
+[Github for Mac](http://mac.github.com/) is a great **FREE** tool. It does all the basics plus makes it easy to push to github.
+
+## Mou for markdown editing.
+![Mou icon](http://mouapp.com/Mou_128.png)
+
+For editing markdown files the [Mou](http://mouapp.com/) application is great and easy to use.  Github has some minor extensions to markdown and it is easy to work around them in **Mou**. 
+
+Example screenshot:
+![Mou Screen](http://mouapp.com/images/Mou_Screenshot_1.png)
+
+##todos
+These are things I want to find answers to:
+
+* Where does Xcode keep info on what not to commit to git?  There
+  does not seem to be a `.ignore` file and I have problems pushing to 
+  origin from inside Xcode. 
