@@ -69,9 +69,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:employee.name];
+    NSString *labelText = [NSString stringWithFormat:@"%@: %@", employee.name, employee.jobTitle];
+    [[cell textLabel] setText:labelText];
     
     return cell;
 }
