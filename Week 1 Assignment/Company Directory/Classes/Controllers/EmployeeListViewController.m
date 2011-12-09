@@ -70,8 +70,9 @@
     }
     
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];
-    NSString *labelText = [NSString stringWithFormat:@"%@: %@", employee.name, employee.jobTitle];
-    [[cell textLabel] setText:labelText];
+    // NSString *labelText = [NSString stringWithFormat:@"%@: %@", employee.name, employee.jobTitle];
+    [[cell textLabel] setText:employee.name];
+    [[cell detailTextLabel] setText:employee.jobTitle];
     
     return cell;
 }
