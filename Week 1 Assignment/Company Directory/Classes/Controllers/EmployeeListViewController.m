@@ -13,7 +13,7 @@
 
 @synthesize employees = _employees;
 
-// TODO: Release instance variables from properties
+// TODO: Release instance variables from properties - DONE
 - (void)dealloc {
     [self.employees release];
     [super dealloc];
@@ -55,12 +55,12 @@
     return 1;
 }
 
-// TODO: Return a number of cells based on the employees array
+// TODO: Return a number of cells based on the employees array - DONE
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.employees count]; 
 }
 
-// TODO: Configure your table view cell for the corresponding employee
+// TODO: Configure your table view cell for the corresponding employee - DONE
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
@@ -70,7 +70,7 @@
     }
     
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];
-    // NSString *labelText = [NSString stringWithFormat:@"%@: %@", employee.name, employee.jobTitle];
+
     [[cell textLabel] setText:employee.name];
     [[cell detailTextLabel] setText:employee.jobTitle];
     
