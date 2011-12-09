@@ -77,8 +77,7 @@
      */
 }
 
-// MARK: -
-// MARK: Testing Mark
+// MARK: - Testing Mark
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {

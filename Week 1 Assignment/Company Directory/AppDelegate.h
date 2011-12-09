@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (readonly, nonatomic, retain) UIWindow *window;
+// UIWindow should be readwrite
+@property (readwrite, nonatomic, retain) UIWindow *window;
+// Keeping readonly and override in implementation file.
 @property (readonly, nonatomic, retain) UINavigationController *navigationController;
 
 
