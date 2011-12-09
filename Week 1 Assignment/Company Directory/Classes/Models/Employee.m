@@ -46,23 +46,59 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     [super dealloc];
 }
 
+// MARK: - Test data
+
++ (id) randomEmployee {
+    NSArray *randomFirstNames = [NSArray arrayWithObjects:@"Alfred", 
+                                                          @"George", 
+                                                          @"David", 
+                                                          @"Art", 
+                                                          @"Sam", 
+                                                          @"Jennifer", 
+                                                          @"Sally", 
+                                                          @"Jill", 
+                                                          @"Jimmy", nil];
+    NSArray *randomLastNames = [NSArray arrayWithObjects:@"Noory", 
+                                                         @"Bell", 
+                                                         @"Flintstone", 
+                                                         @"Brown", 
+                                                         @"Smith", 
+                                                         @"Washington", 
+                                                         @"Jones", nil];
+    int firstNameIndex = rand() % [randomFirstNames count];
+    int lastNameIndex = rand() % [randomLastNames count];
+    NSString *randomName = [NSString stringWithFormat:@"%@ %@",
+                            [randomFirstNames objectAtIndex:firstNameIndex],
+                            [randomLastNames objectAtIndex:lastNameIndex]];
+    
+    NSArray *randomTitlePrefixes = [NSArray arrayWithObjects:@"", 
+                                                             @"Junior ", 
+                                                             @"Senior ", 
+                                                             @"Master ", nil];
+    NSArray *randomTitleSuffixes = [NSArray arrayWithObjects:@"Plumber", 
+                                                             @"Electrician", 
+                                                             @"Carpenter", nil];
+    int titlePrefixIndex = rand() % [randomTitlePrefixes count];
+    int titlePostfixIndex = rand() % [randomTitleSuffixes count];
+    NSString *randomTitle = [NSString stringWithFormat:@"%@%@", 
+                             [randomTitlePrefixes objectAtIndex:titlePrefixIndex],
+                             [randomTitleSuffixes objectAtIndex:titlePostfixIndex]];
+    Employee *randomEmployee = [[Employee alloc] initWithName:randomName];
+    randomEmployee.jobTitle = randomTitle;
+    randomEmployee.salary = rand() % 1000000;
+    randomEmployee.birthday = BirthdayWithMonthDayYear(rand() % 12, rand() % 28, rand() % 111 + 1900);
+    return randomEmployee;
+}
+
 // TODO: Create a list of a couple employees with made-up data - DONE
 + (NSArray *)sampleListOfEmployees {
-    // Total Random set of current and past employees ;-)
-    Employee *emp1 = [[Employee alloc] initWithName:@"Fred Flintstone"];
-    emp1.jobTitle = @"Gravel Pit Operator";
-    emp1.birthday = BirthdayWithMonthDayYear(12, 12, 1950);
-    emp1.salary = 200.0;
-    Employee *emp2 = [[Employee alloc] initWithName:@"George Noory"];
-    emp2.jobTitle = @"Radio Broadcaster";
-    emp2.birthday = BirthdayWithMonthDayYear(1, 1, 1943);
-    emp2.salary = 75000.0;
-    Employee *emp3 = [[Employee alloc] initWithName:@"Art Bell"];
-    emp3.jobTitle = @"Retired Radio Host";
-    emp3.birthday = BirthdayWithMonthDayYear(2, 2, 1935);
-    emp3.salary = 0.0;
-    
-    return [[NSArray alloc] initWithObjects: emp1, emp2, emp3, nil];
+    NSMutableArray *randomEmployees = [NSMutableArray array];
+    int sampleSize = rand() % 30 + 20;
+    while (sampleSize > 0) {
+        [randomEmployees addObject: [Employee randomEmployee]];
+        sampleSize -= 1;
+    }
+    return [NSArray arrayWithArray:randomEmployees];
 }
 
 @end
