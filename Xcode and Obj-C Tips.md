@@ -44,8 +44,23 @@ Whichever one you use is a matter of personal taste.
 
 **NOTE:** A trailing `-` will draw a dividing line below the label.
 
-## Github application
+## Github
+### Coupling repositories
+If you fork a repository on [github](http://gitcub.comgit) and you clone your fork you can still get to the original repository by using `upstream`. For this application I used:
+	remote add upstream https://github.com/CabForward/iOS-on-Rails.git
+Then use `fetch` and `merge` to get updates posted at the original repository.
+	git fetch upstream
+	git merge upstream/master
+See [how to fork a repo](http://help.github.com/fork-a-repo/) in github help for more information.
+
+### Applications
 [Github for Mac](http://mac.github.com/) is a great **FREE** tool. It does all the basics plus makes it easy to push to github.
+
+[Gitbox](http://www.gitboxapp.com/) is a very good and cheap (for a limited time) application.  Currently ( December 9, 2011 ) it is $9.99 at the App Store.
+
+[Tower](http://www.git-tower.com/) is also very good and more polished but it is more expensive.
+
+[SourceTree](http://www.sourcetreeapp.com/) is now **FREE** for a  limited time.  Atlassian has purchased the application. It is also available from the App Store and it works for both Git and Hg!
 
 ## Mou for markdown editing.
 ![Mou icon](http://mouapp.com/Mou_128.png)
