@@ -8,6 +8,8 @@
 
 #import "Employee.h"
 
+#import "AFJSONRequestOperation.h"
+
 static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUInteger year) {
     NSCalendar *gregorianCalendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
     
@@ -25,13 +27,16 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 @synthesize birthday = _birthday;
 @synthesize salary = _salary;
 
-- (id)initWithName:(NSString *)name {
+- (id)initWithAttributes:(NSDictionary *)attributes {
     self = [super init];
     if (!self) {
         return nil;
     }
     
-    self.name = name;
+    self.name = [attributes valueForKey:@"name"];
+    self.jobTitle = [attributes valueForKey:@"job_title"];
+    self.birthday = [NSDate date];
+    self.salary = [NSNumber numberWithFloat:[[attributes valueForKey:@"salary"] floatValue]];
     
     return self;
 }
@@ -61,34 +66,23 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     return [numberFormatter stringFromNumber:self.salary];
 }
 
-+ (NSArray *)sampleListOfEmployees {
-    NSMutableArray *mutableEmployees = [NSMutableArray array];
-    
-    Employee *peterGibbons = [[[Employee alloc] initWithName:@"Peter Gibbons"] autorelease];
-    peterGibbons.jobTitle = @"Programmer";
-    peterGibbons.birthday = BirthdayWithMonthDayYear(6, 5, 1967);
-    peterGibbons.salary = [NSNumber numberWithInteger:58000];
-    [mutableEmployees addObject:peterGibbons];
-    
-    Employee *michaelBolton = [[[Employee alloc] initWithName:@"Michael Bolton"] autorelease];
-    michaelBolton.jobTitle = @"Programmer";
-    michaelBolton.birthday = BirthdayWithMonthDayYear(2, 20, 1967);
-    michaelBolton.salary = [NSNumber numberWithInteger:58000];
-    [mutableEmployees addObject:michaelBolton];
-    
-    Employee *samirNagheenanajar = [[[Employee alloc] initWithName:@"Samir Nagheenanajar"] autorelease];
-    samirNagheenanajar.jobTitle = @"Programmer";
-    samirNagheenanajar.birthday = BirthdayWithMonthDayYear(2, 12, 1972);
-    samirNagheenanajar.salary = [NSNumber numberWithInteger:58000];
-    [mutableEmployees addObject:samirNagheenanajar];
-    
-    Employee *billLumbergh = [[[Employee alloc] initWithName:@"Bill Lumbergh"] autorelease];
-    billLumbergh.jobTitle = @"Division Vice President";
-    billLumbergh.birthday = BirthdayWithMonthDayYear(9, 20, 1956);
-    billLumbergh.salary = [NSNumber numberWithInteger:144000];
-    [mutableEmployees addObject:billLumbergh];
- 
-    return [NSArray arrayWithArray:mutableEmployees];
++ (void)employeesWithBlock:(void (^)(NSArray *employees))block {
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/employees.json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSMutableArray *mutableEmployees = [NSMutableArray array];
+        for (NSDictionary *attributes in JSON) {
+            Employee *employee = [[[Employee alloc] initWithAttributes:attributes] autorelease];
+            [mutableEmployees addObject:employee];
+        }
+        
+        if (block) {
+            block(mutableEmployees);
+        }
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Error: %@", error);
+    }] start];
 }
+
 
 @end

@@ -15,11 +15,11 @@
 @property (nonatomic, retain) NSDate *birthday;
 @property (nonatomic, retain) NSNumber *salary;
 
-- (id)initWithName:(NSString *)name;
+- (id)initWithAttributes:(NSDictionary *)attributes;
 
 - (NSString *)formattedBirthdayString;
 - (NSString *)formattedSalaryString;
 
-+ (NSArray *)sampleListOfEmployees;
++ (void)employeesWithBlock:(void (^)(NSArray *employees))block;
 
 @end

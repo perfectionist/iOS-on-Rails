@@ -11,6 +11,8 @@
 
 #import "Employee.h"
 
+#import "AFJSONRequestOperation.h"
+
 @implementation EmployeeListViewController
 @synthesize employees = _employees;
 
@@ -25,9 +27,11 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Company Directory", nil);
-
-    self.employees = [Employee sampleListOfEmployees];
-    [self.tableView reloadData];
+    
+    [Employee employeesWithBlock:^(NSArray *employees) {
+        self.employees = employees;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewDidUnload {
