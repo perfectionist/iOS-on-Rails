@@ -18,6 +18,8 @@
 		F88C35371493BEB8005A2FBD /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C352B1493BEB8005A2FBD /* AFURLConnectionOperation.m */; };
 		F88C35381493BEB8005A2FBD /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C352D1493BEB8005A2FBD /* AFXMLRequestOperation.m */; };
 		F88C35391493BEB8005A2FBD /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C352F1493BEB8005A2FBD /* UIImageView+AFNetworking.m */; };
+		F88C35421493CE61005A2FBD /* NewEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */; };
+		F88C35431493CE61005A2FBD /* NewEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */; };
 		F8F7623F148D3367004F8DBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F7623E148D3367004F8DBB /* UIKit.framework */; };
 		F8F76241148D3367004F8DBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76240148D3367004F8DBB /* Foundation.framework */; };
 		F8F76243148D3367004F8DBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76242148D3367004F8DBB /* CoreGraphics.framework */; };
@@ -53,6 +55,9 @@
 		F88C352D1493BEB8005A2FBD /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		F88C352E1493BEB8005A2FBD /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		F88C352F1493BEB8005A2FBD /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		F88C353F1493CE61005A2FBD /* NewEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEmployeeViewController.h; sourceTree = "<group>"; };
+		F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEmployeeViewController.m; sourceTree = "<group>"; };
+		F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewEmployeeViewController.xib; path = ../Controllers/NewEmployeeViewController.xib; sourceTree = "<group>"; };
 		F8F7623A148D3367004F8DBB /* Company Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Company Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F7623E148D3367004F8DBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8F76240148D3367004F8DBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -188,6 +193,8 @@
 				F8F7625A148D33AE004F8DBB /* EmployeeListViewController.m */,
 				F886A03914907E400017B3A6 /* EmployeeViewController.h */,
 				F886A03A14907E400017B3A6 /* EmployeeViewController.m */,
+				F88C353F1493CE61005A2FBD /* NewEmployeeViewController.h */,
+				F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 		F8F76258148D338C004F8DBB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F76249148D3367004F8DBB /* InfoPlist.strings in Resources */,
+				F88C35431493CE61005A2FBD /* NewEmployeeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +294,7 @@
 				F88C35371493BEB8005A2FBD /* AFURLConnectionOperation.m in Sources */,
 				F88C35381493BEB8005A2FBD /* AFXMLRequestOperation.m in Sources */,
 				F88C35391493BEB8005A2FBD /* UIImageView+AFNetworking.m in Sources */,
+				F88C35421493CE61005A2FBD /* NewEmployeeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

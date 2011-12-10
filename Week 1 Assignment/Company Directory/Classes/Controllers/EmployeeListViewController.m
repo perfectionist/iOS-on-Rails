@@ -8,10 +8,9 @@
 
 #import "EmployeeListViewController.h"
 #import "EmployeeViewController.h"
+#import "NewEmployeeViewController.h"
 
 #import "Employee.h"
-
-#import "AFJSONRequestOperation.h"
 
 @implementation EmployeeListViewController
 @synthesize employees = _employees;
@@ -27,6 +26,8 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Company Directory", nil);
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEmployee:)];
     
     [Employee employeesWithBlock:^(NSArray *employees) {
         self.employees = employees;
@@ -56,6 +57,14 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
+}
+
+#pragma mark - Actions
+
+- (void)addEmployee:(id)sender {
+    NewEmployeeViewController *viewController = [[[NewEmployeeViewController alloc] initWithNibName:@"NewEmployeeViewController" bundle:nil] autorelease];
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    [self.navigationController presentModalViewController:navigationController animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
