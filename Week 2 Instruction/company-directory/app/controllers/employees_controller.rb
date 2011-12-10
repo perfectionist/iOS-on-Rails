@@ -5,6 +5,6 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     
-    respond_with(@employees)
+    respond_with({:employees => @employees})
   end
 end

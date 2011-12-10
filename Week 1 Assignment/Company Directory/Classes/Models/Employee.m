@@ -71,7 +71,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [[AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSMutableArray *mutableEmployees = [NSMutableArray array];
-        for (NSDictionary *attributes in JSON) {
+        for (NSDictionary *attributes in [JSON valueForKey:@"employees"]) {
             Employee *employee = [[[Employee alloc] initWithAttributes:attributes] autorelease];
             [mutableEmployees addObject:employee];
         }
