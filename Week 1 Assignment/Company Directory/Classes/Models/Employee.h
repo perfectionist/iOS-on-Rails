@@ -22,4 +22,7 @@
 
 + (NSArray *)sampleListOfEmployees;
 
+-(NSString *)formatBirthdayString;
+
+
 @end

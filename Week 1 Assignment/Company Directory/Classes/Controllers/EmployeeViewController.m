@@ -137,7 +137,7 @@ enum EmployeeViewControllerRowIndexes {
             [[cell textLabel] setText:[NSString stringWithFormat:@"$ %f", self.employee.salary]];
              break;
              case BirthdayRowIndex:
-            [[cell textLabel] setText:[NSString stringWithFormat:@"%@", self.employee.birthday]];
+            [[cell textLabel] setText:self.employee.formatBirthdayString];
         default:
             break;
     }    

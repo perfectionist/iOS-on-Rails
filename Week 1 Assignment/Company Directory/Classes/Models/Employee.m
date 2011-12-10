@@ -46,8 +46,15 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     [super dealloc];
 }
 
--(NSString *) description {
-    return [NSString stringWithFormat:@"%@, %@, born %@, making $ %f", self.name, self.jobTitle, self.birthday, self.salary]; 
+-(NSString *)description {
+    return [NSString stringWithFormat:@"%@, %@, born %@, making $ %f", self.name, self.jobTitle, [self formatBirthdayString], self.salary]; 
+}
+
+-(NSString *)formatBirthdayString {
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    return [dateFormatter stringFromDate:self.birthday];
 }
 
 
