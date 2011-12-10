@@ -47,10 +47,14 @@ Whichever one you use is a matter of personal taste.
 ## Github
 ### Coupling repositories
 If you fork a repository on [github](http://gitcub.comgit) and you clone your fork you can still get to the original repository by using `upstream`. For this application I used:
-	remote add upstream https://github.com/CabForward/iOS-on-Rails.git
+
+    git remote add upstream https://github.com/CabForward/iOS-on-Rails.git
+
 Then use `fetch` and `merge` to get updates posted at the original repository.
+
 	git fetch upstream
 	git merge upstream/master
+	
 See [how to fork a repo](http://help.github.com/fork-a-repo/) in github help for more information.
 
 ### Applications
