@@ -8,6 +8,7 @@
 
 #import "Employee.h"
 
+#import "ISO8601DateFormatter.h"
 #import "AFJSONRequestOperation.h"
 
 static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUInteger year) {
@@ -35,7 +36,10 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     
     self.name = [attributes valueForKey:@"name"];
     self.jobTitle = [attributes valueForKey:@"job_title"];
-    self.birthday = [NSDate date];
+    
+    ISO8601DateFormatter *iso8601Formatter = [[[ISO8601DateFormatter alloc] init] autorelease];
+    self.birthday = [iso8601Formatter dateFromString:[attributes valueForKey:@"birthday"]];
+    
     self.salary = [NSNumber numberWithFloat:[[attributes valueForKey:@"salary"] floatValue]];
     
     return self;

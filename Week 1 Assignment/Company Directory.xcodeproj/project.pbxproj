@@ -20,6 +20,8 @@
 		F88C35391493BEB8005A2FBD /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C352F1493BEB8005A2FBD /* UIImageView+AFNetworking.m */; };
 		F88C35421493CE61005A2FBD /* NewEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */; };
 		F88C35431493CE61005A2FBD /* NewEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */; };
+		F88C35471493E46D005A2FBD /* CompanyDirectoryAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C35461493E46D005A2FBD /* CompanyDirectoryAPIClient.m */; };
+		F88C35531493EC71005A2FBD /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F88C35521493EC71005A2FBD /* ISO8601DateFormatter.m */; };
 		F8F7623F148D3367004F8DBB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F7623E148D3367004F8DBB /* UIKit.framework */; };
 		F8F76241148D3367004F8DBB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76240148D3367004F8DBB /* Foundation.framework */; };
 		F8F76243148D3367004F8DBB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F76242148D3367004F8DBB /* CoreGraphics.framework */; };
@@ -58,6 +60,10 @@
 		F88C353F1493CE61005A2FBD /* NewEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEmployeeViewController.h; sourceTree = "<group>"; };
 		F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEmployeeViewController.m; sourceTree = "<group>"; };
 		F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewEmployeeViewController.xib; path = ../Controllers/NewEmployeeViewController.xib; sourceTree = "<group>"; };
+		F88C35451493E46D005A2FBD /* CompanyDirectoryAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyDirectoryAPIClient.h; sourceTree = "<group>"; };
+		F88C35461493E46D005A2FBD /* CompanyDirectoryAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyDirectoryAPIClient.m; sourceTree = "<group>"; };
+		F88C35511493EC71005A2FBD /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		F88C35521493EC71005A2FBD /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		F8F7623A148D3367004F8DBB /* Company Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Company Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F7623E148D3367004F8DBB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8F76240148D3367004F8DBB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +97,7 @@
 		F88C35181493BEB8005A2FBD /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F88C35501493EC71005A2FBD /* ISO8601DateFormatter */,
 				F88C35191493BEB8005A2FBD /* AFNetworking */,
 			);
 			name = Vendor;
@@ -124,6 +131,15 @@
 				F88C352F1493BEB8005A2FBD /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		F88C35501493EC71005A2FBD /* ISO8601DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				F88C35511493EC71005A2FBD /* ISO8601DateFormatter.h */,
+				F88C35521493EC71005A2FBD /* ISO8601DateFormatter.m */,
+			);
+			path = ISO8601DateFormatter;
 			sourceTree = "<group>";
 		};
 		F8F7622F148D3367004F8DBB = {
@@ -182,6 +198,8 @@
 				F8F76256148D338C004F8DBB /* Controllers */,
 				F8F76257148D338C004F8DBB /* Models */,
 				F8F76258148D338C004F8DBB /* Views */,
+				F88C35451493E46D005A2FBD /* CompanyDirectoryAPIClient.h */,
+				F88C35461493E46D005A2FBD /* CompanyDirectoryAPIClient.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -295,6 +313,8 @@
 				F88C35381493BEB8005A2FBD /* AFXMLRequestOperation.m in Sources */,
 				F88C35391493BEB8005A2FBD /* UIImageView+AFNetworking.m in Sources */,
 				F88C35421493CE61005A2FBD /* NewEmployeeViewController.m in Sources */,
+				F88C35471493E46D005A2FBD /* CompanyDirectoryAPIClient.m in Sources */,
+				F88C35531493EC71005A2FBD /* ISO8601DateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

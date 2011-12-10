@@ -10,6 +10,10 @@
 
 @interface NewEmployeeViewController : UIViewController
 
+@property (nonatomic, assign) IBOutlet UITextField *nameTextField;
+@property (nonatomic, assign) IBOutlet UITextField *jobTitleTextField;
+@property (nonatomic, assign) IBOutlet UISlider *salarySlider;
+@property (nonatomic, assign) IBOutlet UIDatePicker *birthdayDatePicker;
 @property (nonatomic, assign) IBOutlet UILabel *salaryAmountLabel;
 
 - (IBAction)salarySliderDidChangeValue:(id)sender;

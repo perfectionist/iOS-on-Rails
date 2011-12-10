@@ -7,4 +7,10 @@ class EmployeesController < ApplicationController
     
     respond_with({:employees => @employees})
   end
+  
+  def create
+    @employee = Employee.create(params[:employee])
+    
+    respond_with(@employee)
+  end
 end
