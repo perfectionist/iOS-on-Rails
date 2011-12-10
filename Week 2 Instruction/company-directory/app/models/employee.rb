@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+  validates :name, :presence => true
+  
   def birthday=(birthday) 
     case birthday
     when String

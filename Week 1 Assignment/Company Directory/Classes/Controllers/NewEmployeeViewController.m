@@ -17,6 +17,10 @@
 @synthesize birthdayDatePicker = _birthdayDatePicker;
 @synthesize salaryAmountLabel = _salaryAmountLabel;
 
+- (BOOL)inputIsValid {
+    return [self.nameTextField.text length] > 0 && [self.jobTitleTextField.text length] > 0;
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -27,6 +31,7 @@
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.navigationController action:@selector(dismissModalViewControllerAnimated:)] autorelease];
     
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(create:)] autorelease];
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 #pragma mark - IBAction
@@ -42,6 +47,7 @@
         NSLog(@"Success: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [[[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Record could not be saved", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil] autorelease] show];
     }];
 //    NSLog(@"Name: %@, Job: %@, Salary: %f, Birthday: %@", self.nameTextField.text, self.jobTitleTextField.text, self.salarySlider.value, self.birthdayDatePicker.date);
 }
@@ -55,6 +61,14 @@
     [numberFormatter setRoundingIncrement:[NSNumber numberWithInteger:1000]];
     
     self.salaryAmountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:salarySlider.value]];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.navigationItem.rightBarButtonItem.enabled = [self inputIsValid];
+    
+    return YES;
 }
 
 @end

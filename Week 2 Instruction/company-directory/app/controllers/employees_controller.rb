@@ -11,6 +11,10 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.create(params[:employee])
     
-    respond_with(@employee)
+    if @employee.new_record?
+      render :json => @employee.errors.to_json, :status => 422
+    else
+      respond_with(@employee)
+    end
   end
 end

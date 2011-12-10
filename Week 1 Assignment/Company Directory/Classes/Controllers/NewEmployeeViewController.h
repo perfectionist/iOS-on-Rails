@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewEmployeeViewController : UIViewController
+@interface NewEmployeeViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, assign) IBOutlet UITextField *nameTextField;
 @property (nonatomic, assign) IBOutlet UITextField *jobTitleTextField;
