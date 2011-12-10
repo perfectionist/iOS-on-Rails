@@ -77,8 +77,8 @@
     }
     
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];
-    NSLog(@"%@", employee);
-    NSLog(@"%d", [indexPath row]);
+//    NSLog(@"%@", employee);
+//    NSLog(@"%d", [indexPath row]);
     [[cell textLabel] setText:employee.name];
     [[cell detailTextLabel] setText:employee.jobTitle];
     
