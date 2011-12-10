@@ -1,0 +1,16 @@
+.DS_Store
+.svn
+*~
+*.log
+*.sqlite3
+*.db
+.livereload
+db/schema.sql
+*.rdb
+tmp/**/*
+**/xcuserdata/
+**/project.xcworkspace
+*.xcworkspace
+docset-installed.txt
+.pod
+.bundle
