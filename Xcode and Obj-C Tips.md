@@ -60,7 +60,7 @@ See [how to fork a repo](http://help.github.com/fork-a-repo/) in github help for
 
 [Tower](http://www.git-tower.com/) is also very good and more polished but it is more expensive.
 
-[SourceTree](http://www.sourcetreeapp.com/) is now **FREE** for a  limited time.  Atlassian has purchased the application. It is also available from the App Store and it works for both Git and Hg!
+[SourceTree](http://www.sourcetreeapp.com/) for Mac is now **FREE** for a  limited time.  Atlassian has purchased the application. It is also available from the App Store and it works for both Git and Hg! This is my go-to git client now.  App is solid and free makes it better :-).
 
 ## Mou for markdown editing.
 ![Mou icon](http://mouapp.com/Mou_128.png)
@@ -75,4 +75,4 @@ These are things I want to find answers to:
 
 * Where does Xcode keep info on what not to commit to git?  There
   does not seem to be a `.ignore` file and I have problems pushing to 
-  origin from inside Xcode. 
+  origin from inside Xcode.  
