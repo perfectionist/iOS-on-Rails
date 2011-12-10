@@ -14,7 +14,7 @@
 @property(nonatomic,retain)NSString *name;
 @property(nonatomic,retain)NSString *jobTitle;
 @property(nonatomic,retain)NSDate   *birthday;
-@property(nonatomic)float            salary;
+@property(nonatomic,retain)NSNumber *salary;
 
 // @todo Implement the following methods
 
@@ -22,7 +22,8 @@
 
 + (NSArray *)sampleListOfEmployees;
 
--(NSString *)formatBirthdayString;
+-(NSString *)formattedBirthdayString;
+-(NSString *)formattedSalaryString;
 
 
 @end

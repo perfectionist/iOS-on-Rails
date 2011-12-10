@@ -47,16 +47,23 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 }
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"%@, %@, born %@, making $ %f", self.name, self.jobTitle, [self formatBirthdayString], self.salary]; 
+    return [NSString stringWithFormat:@"%@, %@, born %@, making %@", self.name, self.jobTitle, [self formattedBirthdayString], self.formattedSalaryString]; 
 }
 
--(NSString *)formatBirthdayString {
+-(NSString *)formattedBirthdayString {
     NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     return [dateFormatter stringFromDate:self.birthday];
 }
 
+- (NSString *)formattedSalaryString {
+    NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+    [numberFormatter setLocale:[NSLocale currentLocale]];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    return [numberFormatter stringFromNumber:self.salary];
+}
 
 // MARK: - Test data
 
@@ -97,9 +104,8 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
                              [randomTitleSuffixes objectAtIndex:titlePostfixIndex]];
     Employee *randomEmployee = [[Employee alloc] initWithName:randomName];
     randomEmployee.jobTitle = randomTitle;
-//    randomEmployee.salary = rand() % 1000000;
-    randomEmployee.salary = 50.0f;
-    randomEmployee.birthday = BirthdayWithMonthDayYear(rand() % 12, rand() % 28, rand() % 111 + 1900);
+    randomEmployee.salary = [NSNumber numberWithInteger: (rand() % 20000 + 30000)];
+    randomEmployee.birthday = BirthdayWithMonthDayYear(rand() % 12, rand() % 28, rand() % 101 + 1900);
 //    NSLog(@"Employee %@", randomEmployee);
     return randomEmployee;
 }
@@ -110,7 +116,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     int sampleSize = rand() % 30 + 20;
     // For debugging
     // I am having problems when the number of employees in the sample are 
-    sampleSize = 4;
+    sampleSize = 8;
     while (sampleSize > 0) {
         [randomEmployees addObject: [Employee randomEmployee]];
         sampleSize -= 1;

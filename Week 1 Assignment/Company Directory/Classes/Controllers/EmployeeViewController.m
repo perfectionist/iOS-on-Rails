@@ -123,21 +123,25 @@ enum EmployeeViewControllerRowIndexes {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     switch (indexPath.row) {
         case NameRowIndex:
-            [[cell textLabel] setText:self.employee.name];
+            [[cell textLabel] setText:@"Name"];
+            [[cell detailTextLabel] setText:self.employee.name];
             break;
         case JobTitleIndex:
-            [[cell textLabel] setText:self.employee.jobTitle];
+            [[cell textLabel] setText:@"Job Title"];
+            [[cell detailTextLabel] setText:self.employee.jobTitle];
             break;
         case SalaryRowIndex:
-            [[cell textLabel] setText:[NSString stringWithFormat:@"$ %f", self.employee.salary]];
+            [[cell textLabel] setText:@"Salary"];
+            [[cell detailTextLabel] setText:self.employee.formattedSalaryString];
              break;
              case BirthdayRowIndex:
-            [[cell textLabel] setText:self.employee.formatBirthdayString];
+            [[cell textLabel] setText:@"Birthday"];
+            [[cell detailTextLabel] setText:self.employee.formattedBirthdayString];
         default:
             break;
     }    
