@@ -46,6 +46,11 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     [super dealloc];
 }
 
+-(NSString *) description {
+    return [NSString stringWithFormat:@"%@, %@, born %@, making $ %f", self.name, self.jobTitle, self.birthday, self.salary]; 
+}
+
+
 // MARK: - Test data
 
 + (id) randomEmployee {
@@ -85,8 +90,10 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
                              [randomTitleSuffixes objectAtIndex:titlePostfixIndex]];
     Employee *randomEmployee = [[Employee alloc] initWithName:randomName];
     randomEmployee.jobTitle = randomTitle;
-    randomEmployee.salary = rand() % 1000000;
+//    randomEmployee.salary = rand() % 1000000;
+    randomEmployee.salary = 50.0f;
     randomEmployee.birthday = BirthdayWithMonthDayYear(rand() % 12, rand() % 28, rand() % 111 + 1900);
+//    NSLog(@"Employee %@", randomEmployee);
     return randomEmployee;
 }
 
@@ -94,6 +101,9 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
 + (NSArray *)sampleListOfEmployees {
     NSMutableArray *randomEmployees = [NSMutableArray array];
     int sampleSize = rand() % 30 + 20;
+    // For debugging
+    // I am having problems when the number of employees in the sample are 
+    sampleSize = 4;
     while (sampleSize > 0) {
         [randomEmployees addObject: [Employee randomEmployee]];
         sampleSize -= 1;

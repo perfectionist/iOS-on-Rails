@@ -8,6 +8,7 @@
 
 #import "EmployeeListViewController.h"
 #import "Employee.h"
+#import "EmployeeViewController.h"
 
 @implementation EmployeeListViewController
 
@@ -26,7 +27,9 @@
     
     self.title = NSLocalizedString(@"Company Directory", nil);
     self.employees = [Employee sampleListOfEmployees];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+//    [self.tableView setShowsVerticalScrollIndicator:YES];
+//    [self.tableView setScrollEnabled:YES];
 }
 
 - (void)viewDidUnload {
@@ -70,7 +73,8 @@
     }
     
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];
-
+    NSLog(@"%@", employee);
+    NSLog(@"%d", [indexPath row]);
     [[cell textLabel] setText:employee.name];
     [[cell detailTextLabel] setText:employee.jobTitle];
     
@@ -78,9 +82,11 @@
 }
 
 #pragma mark - UITableViewDelegate
-// TODO: Create and push a new view configured for the corresponding employee
+// TODO: Create and push a new view configured for the corresponding employee - DONE
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // @todo Create and push a new view configured for the corresponding employee
+    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    EmployeeViewController *viewController = [[[EmployeeViewController alloc] initWithEmployee:employee] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end
