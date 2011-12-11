@@ -35,11 +35,15 @@ There is a neat trick for adding comments to the jump bar. **NOTE**: These comme
 
 ## #pragma mark and jump bar.
 You can also use `#pragma mark` to make nice labels between methods in jump bar.  An example is:
+
 	#pragma mark - UIViewController
+
 The - will draw a dividing line above the label (`UIViewController` in this case)
 
 The `MARK:` comment is another way to to the same thing:
+
 	// MARK: - UIViewController
+
 Whichever one you use is a matter of personal taste.
 
 **NOTE:** A trailing `-` will draw a dividing line below the label.
@@ -47,10 +51,14 @@ Whichever one you use is a matter of personal taste.
 ## Github
 ### Coupling repositories
 If you fork a repository on [github](http://gitcub.comgit) and you clone your fork you can still get to the original repository by using `upstream`. For this application I used:
-	remote add upstream https://github.com/CabForward/iOS-on-Rails.git
+
+    remote add upstream https://github.com/CabForward/iOS-on-Rails.git
+
 Then use `fetch` and `merge` to get updates posted at the original repository.
-	git fetch upstream
-	git merge upstream/master
+
+    git fetch upstream
+    git merge upstream/master
+
 See [how to fork a repo](http://help.github.com/fork-a-repo/) in github help for more information.
 
 ### Applications
