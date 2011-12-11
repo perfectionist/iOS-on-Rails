@@ -43,6 +43,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     [_name release];
     [_jobTitle release];
     [_birthday release];
+    [_salary release];
     [super dealloc];
 }
 
@@ -116,7 +117,7 @@ static NSDate * BirthdayWithMonthDayYear(NSUInteger month, NSUInteger day, NSUIn
     int sampleSize = rand() % 30 + 20;
     // For debugging
     // I am having problems when the number of employees in the sample are 
-    sampleSize = 8;
+    sampleSize = 20;
     while (sampleSize > 0) {
         [randomEmployees addObject: [Employee randomEmployee]];
         sampleSize -= 1;

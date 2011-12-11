@@ -7,6 +7,11 @@
 //
 
 #import "EmployeeViewController.h"
+#import "Employee.h"
+
+@interface EmployeeViewController ()
+@property(readwrite,nonatomic,retain) Employee *employee;
+@end
 
 enum EmployeeViewControllerRowIndexes {
     NameRowIndex = 0,
@@ -19,11 +24,11 @@ enum EmployeeViewControllerRowIndexes {
 
 @synthesize employee = _employee;
 
-// Override the readOnly in the @property declaration.
-- (void) setEmployee:(Employee *)employee {
-    [_employee release];
-    _employee = [employee retain];    
-}
+//// Override the readOnly in the @property declaration.
+//- (void) setEmployee:(Employee *)employee {
+//    [_employee release];
+//    _employee = [employee retain];    
+//}
 
 - (id)initWithEmployee:(Employee *)employee {
     self = [super initWithStyle:UITableViewStyleGrouped];

@@ -11,8 +11,8 @@
 @interface Employee : NSObject
 
 // @todo Add properties for name, job title, birthday, and salary
-@property(nonatomic,retain)NSString *name;
-@property(nonatomic,retain)NSString *jobTitle;
+@property(nonatomic,copy)NSString *name;
+@property(nonatomic,copy)NSString *jobTitle;
 @property(nonatomic,retain)NSDate   *birthday;
 @property(nonatomic,retain)NSNumber *salary;
 

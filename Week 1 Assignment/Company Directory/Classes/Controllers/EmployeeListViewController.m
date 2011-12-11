@@ -27,6 +27,7 @@
     
     self.title = NSLocalizedString(@"Company Directory", nil);
     self.employees = [Employee sampleListOfEmployees];
+    
 //    [self.tableView reloadData];
 //    [self.tableView setShowsVerticalScrollIndicator:YES];
 //    [self.tableView setScrollEnabled:YES];
@@ -73,7 +74,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     Employee *employee = [self.employees objectAtIndex:[indexPath row]];

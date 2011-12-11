@@ -9,7 +9,9 @@
 // This controller is for a table view of one employee so we just need to know which one.
 
 #import <UIKit/UIKit.h>
-#import "Employee.h"
+// #import "Employee.h"
+// Fix problem with multiple headers - simplify and a little less overhead.
+@class Employee;
 
 @interface EmployeeViewController : UITableViewController
 
