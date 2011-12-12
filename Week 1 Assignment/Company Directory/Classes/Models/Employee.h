@@ -10,16 +10,12 @@
 
 @interface Employee : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *jobTitle;
-@property (nonatomic, retain) NSDate *birthday;
-@property (nonatomic, retain) NSNumber *salary;
+// @todo Add properties for name, job title, birthday, and salary
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
+// @todo Implement the following methods
 
-- (NSString *)formattedBirthdayString;
-- (NSString *)formattedSalaryString;
+- (id)initWithName:(NSString *)name;
 
-+ (void)employeesWithBlock:(void (^)(NSArray *employees))block;
++ (NSArray *)sampleListOfEmployees;
 
 @end

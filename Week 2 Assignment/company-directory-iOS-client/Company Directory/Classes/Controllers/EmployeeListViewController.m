@@ -7,11 +7,16 @@
 //
 
 #import "EmployeeListViewController.h"
+#import "EmployeeViewController.h"
+#import "NewEmployeeViewController.h"
+
+#import "Employee.h"
 
 @implementation EmployeeListViewController
+@synthesize employees = _employees;
 
 - (void)dealloc {
-    // @todo Release instance variables from properties
+    [_employees release];
     [super dealloc];
 }
 
@@ -21,6 +26,13 @@
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Company Directory", nil);
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addEmployee:)];
+    
+    [Employee employeesWithBlock:^(NSArray *employees) {
+        self.employees = employees;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewDidUnload {
@@ -29,6 +41,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if ([self.tableView indexPathForSelectedRow]) {
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -43,6 +59,14 @@
 	[super viewDidDisappear:animated];
 }
 
+#pragma mark - Actions
+
+- (void)addEmployee:(id)sender {
+    NewEmployeeViewController *viewController = [[[NewEmployeeViewController alloc] initWithNibName:@"NewEmployeeViewController" bundle:nil] autorelease];
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    [self.navigationController presentModalViewController:navigationController animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,7 +74,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0; // @todo Return a number of cells based on the employees array
+    return [self.employees count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,7 +85,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    // @todo Configure your table view cell for the corresponding employee
+    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = employee.name;
+    cell.detailTextLabel.text = employee.jobTitle;
     
     return cell;
 }
@@ -69,7 +96,9 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // @todo Create and push a new view configured for the corresponding employee
+    Employee *employee = [self.employees objectAtIndex:indexPath.row];
+    EmployeeViewController *viewController = [[[EmployeeViewController alloc] initWithEmployee:employee] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end
