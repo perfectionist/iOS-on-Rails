@@ -31,7 +31,7 @@ There is a neat trick for adding comments to the jump bar. **NOTE**: These comme
 ###!!!
 	// !!!: your comment here…
 ### How does it look?
-![jump bar](http://www.kellenstyler.com/wp-content/posts/iOSCustomJumpbarFunctionMenu/customMenu.jpg)
+![jump bar](http://www.kellenstyler.com/wp-content/posts/iOSCustomJumpbarFunctionMenu/customMenu.jpg )
 
 ## #pragma mark and jump bar.
 You can also use `#pragma mark` to make nice labels between methods in jump bar.  An example is:
@@ -69,11 +69,20 @@ See [how to fork a repo](http://help.github.com/fork-a-repo/) in github help for
 [Tower](http://www.git-tower.com/) is also very good and more polished but it is more expensive.
 
 [SourceTree](http://www.sourcetreeapp.com/) for Mac is now **FREE** for a  limited time.  Atlassian has purchased the application. It is also available from the App Store and it works for both Git and Hg! This is my go-to git client now.  App is solid and free makes it better :-).
+## Markdown Editing ##
+### MultiMarkdown Composer and Marked ###
+![MMC](http://files.multimarkdown.com/app_icon.png)
+![Marked](http://markedapp.com/images/newmarkedlogo.png)
 
-## Mou for markdown editing.
+These two applications are my personal choice for editing and displaying MarkDown files. 
+
+[MultiMarkdown Composer](http://multimarkdown.com/) 
+
+[Marked](http://markedapp.com/) displays markdown files and updates as they are saved.  It can work with any editor but I prefer MultiMarkdown Composer.
+### Mou (FREE)
 ![Mou icon](http://mouapp.com/Mou_128.png)
 
-For editing markdown files the [Mou](http://mouapp.com/) application is great and easy to use.  Github has some minor extensions to markdown and it is easy to work around them in **Mou**. 
+For editing markdown files the **FREE** [Mou](http://mouapp.com/) application is great and easy to use.  Github has some minor extensions to markdown and it is easy to work around them in **Mou**. 
 
 Example screenshot:
 ![Mou Screen](http://mouapp.com/images/Mou_Screenshot_1.png)
