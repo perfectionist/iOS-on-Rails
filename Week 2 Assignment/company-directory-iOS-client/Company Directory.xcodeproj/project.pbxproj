@@ -59,7 +59,7 @@
 		F88C352F1493BEB8005A2FBD /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		F88C353F1493CE61005A2FBD /* NewEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEmployeeViewController.h; sourceTree = "<group>"; };
 		F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEmployeeViewController.m; sourceTree = "<group>"; };
-		F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewEmployeeViewController.xib; path = ../Controllers/NewEmployeeViewController.xib; sourceTree = "<group>"; };
+		F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewEmployeeViewController.xib; sourceTree = "<group>"; };
 		F88C35451493E46D005A2FBD /* CompanyDirectoryAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyDirectoryAPIClient.h; sourceTree = "<group>"; };
 		F88C35461493E46D005A2FBD /* CompanyDirectoryAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyDirectoryAPIClient.m; sourceTree = "<group>"; };
 		F88C35511493EC71005A2FBD /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
@@ -213,6 +213,7 @@
 				F886A03A14907E400017B3A6 /* EmployeeViewController.m */,
 				F88C353F1493CE61005A2FBD /* NewEmployeeViewController.h */,
 				F88C35401493CE61005A2FBD /* NewEmployeeViewController.m */,
+				F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,7 +230,6 @@
 		F8F76258148D338C004F8DBB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F88C35411493CE61005A2FBD /* NewEmployeeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
