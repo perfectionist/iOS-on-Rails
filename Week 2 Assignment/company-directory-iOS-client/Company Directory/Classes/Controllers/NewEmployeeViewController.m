@@ -20,7 +20,9 @@
 - (BOOL)inputIsValid {
     return [self.nameTextField.text length] > 0 && [self.jobTitleTextField.text length] > 0;
 }
-
+//-(void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+//    NSLog(@"HELLO");
+//}
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -70,5 +72,11 @@
     
     return YES;
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField { 
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 @end

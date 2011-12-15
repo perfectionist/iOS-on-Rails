@@ -51,6 +51,7 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+    NSLog(@"viewDidUnload - EmployeeListViewController");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,14 +68,17 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear - EmployeeListViewController");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+    NSLog(@"viewWillDisappear - EmployeeListViewController");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
+    NSLog(@"viewDidDisappear - EmployeeListViewController");
 }
 
 #pragma mark - Actions
