@@ -14,20 +14,26 @@
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
 
+// This never gets called.
 - (void)dealloc {
+    NSLog(@"AppDelegate dealloc method called");
     [_window release];
     [_navigationController release];
     [super dealloc];
 }
 
+// TODO: See if navigationController can be added as root controller to window and then be released.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    EmployeeListViewController *viewController = [[[EmployeeListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
-    
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    EmployeeListViewController *viewController = [[EmployeeListViewController alloc] init];
+//    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    // You can release the viewController here since UINavigation controller will hold on to it.
+    [viewController release];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window addSubview:self.navigationController.view];
+//    [navigationController release];
     [self.window makeKeyAndVisible];
-    
+    NSLog(@"AppDelege: Finished Launching");
     return YES;
 }
 

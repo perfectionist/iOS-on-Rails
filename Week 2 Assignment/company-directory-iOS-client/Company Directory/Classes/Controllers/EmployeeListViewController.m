@@ -15,6 +15,20 @@
 @implementation EmployeeListViewController
 @synthesize employees = _employees;
 
+// Definite our own initialier as per Conway and Hillegass.
+- (id)init {
+    self = [super initWithStyle:UITableViewStylePlain];
+    if (self) {
+    }
+    return self;
+}
+
+// This is the default initializer for UITableViewController.  We are overriding it to 
+// force our style. Page 174 iOS Programming 2nd Edition.
+-(id) initWithStyle:(UITableViewStyle)style {
+    return [self init];
+}
+
 - (void)dealloc {
     [_employees release];
     [super dealloc];
@@ -82,7 +96,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     Employee *employee = [self.employees objectAtIndex:indexPath.row];
