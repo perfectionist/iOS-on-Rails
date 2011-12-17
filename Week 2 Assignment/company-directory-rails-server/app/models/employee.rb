@@ -1,5 +1,8 @@
 class Employee < ActiveRecord::Base
+  attr_accessible :name, :job_title, :birthday, :salary
   validates :name, :presence => true
+
+  belongs_to :department
   
   def birthday=(birthday) 
     case birthday
