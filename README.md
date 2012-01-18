@@ -48,6 +48,7 @@ This course assumes a basic working knowledge of Rails and Ruby. No previous Obj
 1:00 PM   Part 3: Advanced Topics  
 3:00 PM   End of Class  
 
+<script src="https://gist.github.com/1635477.js?file=tableCellReuseExample.m"></script>
 
 ## Instructor: Mattt Thompson
 
